@@ -66,6 +66,3 @@ for callbacks from foreign threads.
 Regenerate with `python3 tools/bindgen/bindgen.py common_lisp`; verify with
 `python3 tools/bindgen/bindgen.py --check common_lisp`. The default generator
 run includes Common Lisp. Generated files contain the C documentation comments.
-
-After loading the ASDF system, load `smoke-test.lisp` to check integer widths,
-structure access, and a CFFI callback round trip without a Raven shared library.
