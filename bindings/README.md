@@ -1,7 +1,7 @@
 # Raven from other languages
 
 Raven is a C library, so any language that can call C can use it. This folder
-holds ready-made bindings for eleven of them. They are written by a script,
+holds ready-made bindings for several of them. They are written by a script,
 `tools/bindgen`, that reads the public headers: every binding has the whole
 API (937 functions, 56 enumerations, 22 structures, 59 kinds of callback),
 under the same names, with the same documentation comments.
@@ -19,6 +19,7 @@ under the same names, with the same documentation comments.
 | Odin | `odin/raven/raven.odin`, `odin/raven_odin/` | A package of `foreign` declarations; structures have the layout of C. `raven_odin` is an optional layer over it: Odin strings, booleans and enums, callbacks without `proc "c"`. See `odin/README.md`. | yes (`binding_odin`, `binding_odin_wrapper`, `binding_odin_wrapper_test`) |
 | Bun | `bun/src/raven.ts` | One TypeScript module, `bun:ffi`, no dependency. Texts are strings, callbacks are functions, values written through pointers are returned. See `bun/README.md` for threads and the event loop. | yes (`binding_bun`) |
 | Node.js | `node/` | A Node-API addon in C and an ES module with typings, the same surface as Bun's. One `.node` per platform runs on any Node.js, and on Bun and Deno. See `node/README.md`. | yes (`binding_node`, `binding_node_bun`) |
+| Common Lisp | `common-lisp/` | An ASDF system using CFFI, with the full C API, structures, constants and callback macros. See [usage](common-lisp/README.md). | no |
 | C3 | `c3/raven.c3l/` | A library: `raven::c` is the C API, `raven` adds typed handles with methods (`button.set_text(...)`), faults and Optionals. See `c3/raven.c3l/README.md`. | no |
 
 "Tested" means that the example of the binding, started with `--test`, runs
